@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Users Quick List</string>
+    <string name="xpayback_users">Xpayback Users</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_user_list_fragment">Dashboard</string>
+    <string name="user_image">User Image</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="full_name">Full Name:</string>
+    <string name="age_gender">Age / Gender:</string>
+    <string name="email">Email:</string>
+    <string name="phone">Phone:</string>
+    <string name="username">Username:</string>
+    <string name="birth_date">Birth Date:</string>
+    <string name="physical_attributes">Physical Attributes</string>
+    <string name="height_weight">Height / Weight:</string>
+    <string name="eye_color">Eye Color:</string>
+    <string name="hair_color">Hair Color:</string>
+    <string name="blood_group">Blood Group:</string>
+    <string name="address">Address</string>
+    <string name="full_address">Full Address:</string>
+    <string name="company_info">Company Info</string>
+    <string name="company">Company:</string>
+    <string name="bank_info">Bank Info</string>
+    <string name="bank_details">Bank Details:</string>
+    <string name="other_info">Other Info</string>
+    <string name="ip_mac">IP / MAC Address:</string>
+    <string name="university">University:</string>
+    <string name="ein_ssn">EIN / SSN:</string>
+    <string name="user_agent">User Agent:</string>
+    <string name="crypto">Crypto:</string>
+    <string name="role">Role:</string>
+    <string name="not_available">not available</string>
+    <string name="back_press_text">Double Tap to Exit!</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/UserListFragment1">
+
+    <fragment
+        android:id="@+id/UserListFragment1"
+        android:name="com.xpayback.usersquicklist.ui.fragment.UserListFragment"
+        android:label="@string/label_user_list_fragment"
+        tools:layout="@layout/fragment_user_list">
+
+        <action
+            android:id="@+id/action_UserListFragment_to_UserFragment"
+            app:destination="@id/UserFragment1">
+            <argument
+                android:name="userId"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/UserFragment1"
+        android:name="com.xpayback.usersquicklist.ui.fragment.UserFragment"
+        android:label=""
+        tools:layout="@layout/fragment_user">
+
+        <action
+            android:id="@+id/action_UsersFragment_to_UserListFragment"
+            app:destination="@id/UserListFragment1" />
+
+    </fragment>
+</navigation>

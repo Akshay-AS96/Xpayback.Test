@@ -1,0 +1,13 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.UsersQuickList" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/violet</item>
+        <item name="colorPrimaryDark">@color/violet</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/violet</item>
+        <item name="android:statusBarColor">@color/violet</item>
+    </style>
+
+    <style name="Theme.UsersQuickList" parent="Base.Theme.UsersQuickList" />
+</resources>
