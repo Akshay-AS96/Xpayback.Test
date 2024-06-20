@@ -21,14 +21,20 @@ import com.xpayback.usersquicklist.ui.adapter.UserListAdapter
 import com.xpayback.usersquicklist.viewmodel.UsersViewModel
 import com.xpayback.usersquicklist.viewmodel_factory.UserListViewModelFactory
 
-
+// Fragment responsible for displaying a list of users
 class UserListFragment : Fragment() {
 
     private lateinit var binding: FragmentUserListBinding
+
+    // Services and repositories for fetching user data
     private val userService = CloudManager.apiService
     private val userRepository = UsersRepository(userService)
     private lateinit var layoutManagerUser: LinearLayoutManager
+
+    // List to store fetched users
     private var userList: MutableList<User> = mutableListOf()
+
+    // ViewModel for managing user list data
     private val userListViewModel: UsersViewModel by viewModels {
         UserListViewModelFactory(
             userRepository
@@ -46,12 +52,14 @@ class UserListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Start loading users
         userListViewModel.loadUsers()
         onClickRecyclerview()
         initRecyclerview()
         observeViewModel()
     }
 
+    // Set up click listener for RecyclerView items
     private fun onClickRecyclerview() {
         usersAdapter = UserListAdapter {
             val args = Bundle()
@@ -60,6 +68,7 @@ class UserListFragment : Fragment() {
         }
     }
 
+    // Initialize RecyclerView
     private fun initRecyclerview() {
         userListViewModel.loadingState.observe(viewLifecycleOwner) {
             binding.progress.visibility = if (it) View.VISIBLE else View.GONE
@@ -72,7 +81,9 @@ class UserListFragment : Fragment() {
         }
     }
 
+    // Observe data from the ViewModel
     private fun observeViewModel() {
+        // Observe the user list and update the adapter
         userListViewModel.userList.observe(viewLifecycleOwner) { products ->
             products.forEach {
                 userList.add(it)
@@ -80,16 +91,18 @@ class UserListFragment : Fragment() {
             usersAdapter.submitList(userList)
         }
 
+        // Observe error messages and display them as Toasts
         userListViewModel.errorMessage.observe(viewLifecycleOwner) { errorMessage ->
             Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show()
         }
     }
 
-
+    // Scroll listener for pagination
     private val recyclerViewOnScrollListenerUser = object : RecyclerView.OnScrollListener() {
 
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
+            // Calculate positions for pagination check
             val firstVisibleItemPosition = layoutManagerUser.findFirstVisibleItemPosition()
             val visibleItemCount = layoutManagerUser.childCount
             val totalItemCount = layoutManagerUser.itemCount

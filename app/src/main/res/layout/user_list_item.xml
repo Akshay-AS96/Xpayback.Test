@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/userImage"
-            android:layout_width="95dp"
-            android:layout_height="95dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_marginEnd="8dp"
             android:padding="8dp"
             android:scaleType="centerCrop"
@@ -37,7 +37,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:maxLines="2"
-            android:text="@{user.username}"
+            android:text="@{user.firstName+' '+user.lastName}"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@+id/userImage"

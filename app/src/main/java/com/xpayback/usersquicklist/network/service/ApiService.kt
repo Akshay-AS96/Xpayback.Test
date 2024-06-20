@@ -12,8 +12,8 @@ interface ApiService {
 
     @GET("users")
     suspend fun getUsers(
-        @Query("limit") limit: Int,
-        @Query("skip") skip: Int
+        @Query("limit") limit: Int, // Number of users to fetch per page
+        @Query("skip") skip: Int // Number of users to skip (for pagination)
     ): UserResponse
 
     @GET("users/{id}")

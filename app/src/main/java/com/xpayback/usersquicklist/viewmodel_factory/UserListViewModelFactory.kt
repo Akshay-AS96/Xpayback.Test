@@ -7,11 +7,14 @@ import com.xpayback.usersquicklist.viewmodel.UsersViewModel
 
 class UserListViewModelFactory(private val repository: UsersRepository) :
     ViewModelProvider.Factory {
+
+    // Creates a new instance of the UsersViewModel
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(UsersViewModel::class.java)) {
             return UsersViewModel(repository) as T
         }
+
         throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

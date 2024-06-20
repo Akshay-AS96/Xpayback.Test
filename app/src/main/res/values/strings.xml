@@ -31,4 +31,6 @@
     <string name="role">Role:</string>
     <string name="not_available">not available</string>
     <string name="back_press_text">Double Tap to Exit!</string>
+    <string name="no_internet_connection">No internet connection.\n
+        Please check your network settings</string>
 </resources>
